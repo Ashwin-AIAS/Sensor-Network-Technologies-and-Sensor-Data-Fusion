@@ -1,16 +1,16 @@
-# Sensor Networks and Sensor Data Fusion
-## Programming Exercise 2: Face Detection and 3D Reconstruction
+Face Detection and 3D Reconstruction
 
-### Description
-#### Files
-* `face.py` is your main program. 
-* `calibration_data.pkl` contains camera calibration data for my computer's camera.
+This project detects faces from a webcam feed and estimates their 3D position in the camera coordinate frame using a calibrated monocular camera.
 
-You can run the program using `python face.py` after setting up your work environment. See below.
+## How It Works
+- The function `processFace()` estimates (x, y, z) in millimetres using the pinhole camera model:
+  - Depth: \( Z = f_y \times H_{real} / h_{pixels} \)
+  - Back-projection: \( [X, Y, Z]^T = Z \cdot K^{-1} [u, v, 1]^T \)
+- The results are plotted live using DearPyGui.
 
-I have left the function `processFace()` as exercise for you. It receives the camera matrix and the coordinates of the upper left and lower right corner of the first face found in the camera picture. It should return a 3-vector with the (x,y,z) coordinates of the face's center in the camera frame. These coordinates then get plotted. Please use the information you learned in the lecture to fill the function. Basic trigonometry and the camera matrix should be sufficient.
-
-If you have questions or comments chat me up in Teams or write an email to bjoern.giesler@thi.de!
+## Run
+```bash
+python "face solution.py"
 
 ### Set up your work environment 
 To prepare your work environment, you need
