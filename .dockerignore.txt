@@ -1,0 +1,11 @@
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+calibration_data.pkl
+.git
+.gitignore
+Dockerfile.gui
+requirements-gui.txt
+.vscode/
+.idea/
